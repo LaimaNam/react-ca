@@ -4,11 +4,11 @@ import PortfolioItem from './PortfolioItem';
 import Button from './Button';
 
 const Portfolio = ({ portfolioHeading, portfolioContent }) => {
-  const [state, setState] = useState([]);
+  const [productimages, setProductimages] = useState([]);
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then((res) => res.json())
-      .then((data) => setState(data));
+      .then((data) => setProductimages(data));
   }, []);
 
   return (
@@ -19,8 +19,8 @@ const Portfolio = ({ portfolioHeading, portfolioContent }) => {
         <Button btnText="Shop all" />
       </div>
       <div className="portfolio-items">
-        {console.log(state)}
-        {state.map((product) => (
+        {console.log(productimages)}
+        {productimages.map((product) => (
           <PortfolioItem
             key={product.id}
             imgSrc={product.image}
