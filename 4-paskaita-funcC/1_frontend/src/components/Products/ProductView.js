@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import ProductButton from './ProductButton';
 
-const Product = ({ imgSrc, imgAlt, imgTitle, imgPrice, action, id }) => {
+const ProductView = ({
+  imgSrc,
+  imgAlt,
+  imgTitle,
+  category,
+  description,
+  imgPrice,
+  action,
+}) => {
   const [count, setCount] = useState(1);
 
   const increment = () => {
@@ -15,9 +23,11 @@ const Product = ({ imgSrc, imgAlt, imgTitle, imgPrice, action, id }) => {
 
   return (
     <div className="product-item">
-      <img src={imgSrc} alt={imgAlt} onClick={() => action(id)} />
+      <img src={imgSrc} alt={imgAlt} onClick={() => action(imgTitle)} />
       <div className="product-info">
+        <p className="product-item-category">{category}</p>
         <p className="product-item-title">{imgTitle}</p>
+        <p className="product-item-description">{description}</p>
         <p className="product-item-price">${imgPrice}</p>
         <div className="product-state">
           <div className="product-count">
@@ -32,4 +42,4 @@ const Product = ({ imgSrc, imgAlt, imgTitle, imgPrice, action, id }) => {
   );
 };
 
-export default Product;
+export default ProductView;
