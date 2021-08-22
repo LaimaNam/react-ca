@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ProductButton from './ProductButton';
+import './productView.css';
 
 const ProductView = ({
   imgSrc,
@@ -22,18 +23,22 @@ const ProductView = ({
   };
 
   return (
-    <div className="product-item">
+    <div className="productView-item">
       <img src={imgSrc} alt={imgAlt} onClick={() => action(imgTitle)} />
-      <div className="product-info">
-        <p className="product-item-category">{category}</p>
-        <p className="product-item-title">{imgTitle}</p>
-        <p className="product-item-description">{description}</p>
-        <p className="product-item-price">${imgPrice}</p>
-        <div className="product-state">
-          <div className="product-count">
-            <span onClick={decrement}>-</span>
-            <span>{count}</span>
-            <span onClick={increment}>+</span>
+      <div className="productView-info">
+        <p className="productView-item-category">{category}</p>
+        <p className="productView-item-title">{imgTitle.toUpperCase()}</p>
+        <p className="productView-item-description">{description}</p>
+        <p className="productView-item-price">${imgPrice.toFixed(2)}</p>
+        <div className="productView-state">
+          <div className="productView-count">
+            <button className="productView-count-btn" onClick={decrement}>
+              -
+            </button>
+            <button className="productView-count-btn">{count}</button>
+            <button className="productView-count-btn" onClick={increment}>
+              +
+            </button>
           </div>
           <ProductButton />
         </div>

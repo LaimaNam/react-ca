@@ -17,6 +17,7 @@ const Products = ({ heading }) => {
   const selectProduct = (id) => {
     if (productId === '') {
       setProductId(id);
+      window.scrollTo(0, 0);
     } else {
       setProductId('');
     }
