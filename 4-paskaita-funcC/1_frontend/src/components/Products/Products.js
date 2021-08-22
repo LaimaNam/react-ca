@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Product from './Product';
 import './Products.css';
+import ProductView from './ProductView';
 
 const Products = ({ heading }) => {
   const [productItems, setProductItems] = useState([]);
@@ -21,14 +22,17 @@ const Products = ({ heading }) => {
     }
   };
 
-  return (
-    <>
-      <h2>{heading}</h2>
-      <div className="products-section">
-        {productItems
-          //first time productId state is empty string "", so rendering all products, when clicking on product img stateId becomes product id and showing one product
-          .filter((product) => productId === '' || product.id === productId)
-          .map((product) => (
+  const findProductById = (products, id) => {
+    let product = products.filter((product) => product.id === id);
+    return product[0];
+  };
+
+  if (productId === '') {
+    return (
+      <>
+        <h2>{heading}</h2>
+        <div className="products-section">
+          {productItems.map((product) => (
             <Product
               action={selectProduct}
               key={product.id}
@@ -39,9 +43,27 @@ const Products = ({ heading }) => {
               imgPrice={product.price}
             />
           ))}
-      </div>
-    </>
-  );
+        </div>
+      </>
+    );
+  } else {
+    const product = findProductById(productItems, productId);
+    return (
+      <>
+        <ProductView
+          action={selectProduct}
+          key={product.id}
+          id={product.id}
+          imgSrc={product.image}
+          imgAlt={product.title}
+          category={product.category}
+          imgTitle={product.title}
+          description={product.description}
+          imgPrice={product.price}
+        />
+      </>
+    );
+  }
 };
 
 export default Products;
