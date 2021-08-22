@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ProductButton from './ProductButton';
+import './Product.css';
 
 const Product = ({ imgSrc, imgAlt, imgTitle, imgPrice, action, id }) => {
   const [count, setCount] = useState(1);
