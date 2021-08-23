@@ -1,0 +1,40 @@
+.todos-wrapper {
+  background-color: rgba(245, 245, 245, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  max-width: 900px;
+}
+
+.todos-wrapper h3 {
+  font-weight: 500;
+  color: rgb(59, 59, 59);
+}
+
+.todos {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  /* justify-content: space-between; */
+}
+
+form input {
+  border: none;
+  padding: 15px 10px;
+}
+
+#todoInput {
+  width: 70%;
+}
+
+input[type='submit'] {
+  width: 30%;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  color: rgb(59, 59, 59);
+}

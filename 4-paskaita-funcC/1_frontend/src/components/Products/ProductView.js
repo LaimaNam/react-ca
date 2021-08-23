@@ -29,13 +29,18 @@ const ProductView = ({
         <p className="productView-item-category">{category}</p>
         <p className="productView-item-title">{imgTitle.toUpperCase()}</p>
         <p className="productView-item-description">{description}</p>
-        <p className="productView-item-price">${imgPrice.toFixed(2)}</p>
+        <p className="productView-item-price">${imgPrice.toFixed(2) * count}</p>
         <div className="productView-state">
           <div className="productView-count">
             <button className="productView-count-btn" onClick={decrement}>
               -
             </button>
-            <button className="productView-count-btn">{count}</button>
+            {/* <button className="productView-count-btn">{count}</button> */}
+            <input
+              type="text"
+              value={count}
+              onChange={(e) => setCount(e.target.value)}
+            />
             <button className="productView-count-btn" onClick={increment}>
               +
             </button>

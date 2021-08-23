@@ -4,7 +4,9 @@ import './Products.css';
 import ProductView from './ProductView';
 
 const Products = ({ heading }) => {
+  //products state
   const [productItems, setProductItems] = useState([]);
+  // product id state
   const [productId, setProductId] = useState('');
 
   useEffect(() => {
@@ -28,6 +30,7 @@ const Products = ({ heading }) => {
     return product[0];
   };
 
+  //ui
   if (productId === '') {
     return (
       <>

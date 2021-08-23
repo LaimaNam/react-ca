@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ProductButton from './ProductButton';
+// import ProductButton from './ProductButton';
 import './Product.css';
 
 const Product = ({
@@ -11,7 +11,7 @@ const Product = ({
   action,
   id,
 }) => {
-  const [count, setCount] = useState(1);
+  // const [count, setCount] = useState(1);
 
   // const increment = () => {
   //   setCount(count + 1);
@@ -28,6 +28,7 @@ const Product = ({
       <div className="product-info">
         <p className="product-item-category">{category}</p>
         <p className="product-item-title">{imgTitle}</p>
+        <p>&#10032;&#10032;&#10032;&#10032;&#10032;</p>
         <p className="product-item-price">${imgPrice.toFixed(2)}</p>
         <div className="product-state">
           {/* <div className="product-count">
