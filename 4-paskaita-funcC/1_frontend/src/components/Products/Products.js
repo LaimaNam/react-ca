@@ -42,6 +42,7 @@ const Products = ({ heading }) => {
               imgAlt={product.title}
               imgTitle={product.title}
               imgPrice={product.price}
+              category={product.category}
             />
           ))}
         </div>

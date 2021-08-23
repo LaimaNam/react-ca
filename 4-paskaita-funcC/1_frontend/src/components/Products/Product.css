@@ -29,6 +29,10 @@
   background-color: rgb(197, 197, 197);
 }
 
+.product-item-category {
+  color: rgb(168, 168, 168);
+}
+
 @media screen and (min-width: 500px) {
   .product-item {
     width: calc(100% / 2 - 15px);
