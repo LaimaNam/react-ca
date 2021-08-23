@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   padding: 30px;
-  max-width: 900px;
+  max-width: 850px;
 }
 
 .todos-wrapper h3 {
@@ -37,6 +37,12 @@ input[type='submit'] {
   font-weight: bolder;
   color: rgb(59, 59, 59);
   cursor: pointer;
+}
+
+/* completed todo's style */
+.done-items {
+  max-width: 950px;
+  padding: 30px;
 }
 
 .completed-todos {

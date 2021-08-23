@@ -75,7 +75,7 @@ const Todos = () => {
                   key={todo}
                   todo={todo}
                   action={deleteFromStorage}
-                  symbol="&#128071;"
+                  symbol="&#128071;&#127996;"
                 />
               ))}
             </div>
@@ -101,7 +101,7 @@ const Todos = () => {
               key={completedItem}
               todo={completedItem}
               action={sentBackToTodoLis}
-              symbol="&#x261D;"
+              symbol="&#9757;&#127996;"
             />
           </div>
         ))}

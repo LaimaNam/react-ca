@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   padding: 10px 5px;
 }
 .todo-item {
@@ -18,6 +19,7 @@
   padding: 5px 5px;
   cursor: pointer;
   transition: 0.3s;
+  font-size: 1.1em;
 }
 
 .todo-delete-btn:hover {
