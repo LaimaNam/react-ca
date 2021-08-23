@@ -1,12 +1,12 @@
 import React from 'react';
 import './Todo.css';
 
-const Todo = ({ todo, action }) => {
+const Todo = ({ todo, action, symbol }) => {
   return (
     <div className="todo-item-wrapper">
       <p className="todo-item">{todo}</p>
       <button className="todo-delete-btn" onClick={() => action(todo)}>
-        &#10060;
+        {symbol}
       </button>
     </div>
   );

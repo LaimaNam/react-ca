@@ -3,28 +3,27 @@ import './Todos.css';
 import Todo from './Todo';
 
 const Todos = () => {
-  // Todos state
+  // --- states
+  // todos state
   const [todos, setTodos] = useState(() => {
     const savedTodos = localStorage.getItem('todos');
     const initialValue = JSON.parse(savedTodos);
     return initialValue || [];
   });
-  //Done todos state
+  // done todos state
   const [doneItems, setDoneItems] = useState(() => {
     const savedCompletedItems = localStorage.getItem('doneItems');
     const initialValue = JSON.parse(savedCompletedItems);
-    console.log(initialValue);
     return initialValue || [];
   });
 
-  useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos));
-  }, [todos]);
-
+  // --- effects
   useEffect(() => {
     localStorage.setItem('doneItems', JSON.stringify(doneItems));
-  }, [doneItems]);
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [doneItems, todos]);
 
+  // --- functions
   const handleSubmit = (e) => {
     e.preventDefault();
     let inputValue = e.target.todoInput.value;
@@ -34,23 +33,28 @@ const Todos = () => {
   };
 
   const deleteFromStorage = (todo) => {
+    //filtered todo to delete
+    let deletedItem = todos.filter((item) => item === todo);
+    deletedItem = deletedItem[0];
+    //fitlered items without todo to delete
     const currentTodosArray = todos.filter((item) => item !== todo);
-    const deletedItem = todos.filter((item) => item === todo);
 
-    setDoneItems(...doneItems, deletedItem);
+    setDoneItems([...doneItems, deletedItem]);
     setTodos(currentTodosArray);
   };
 
   const sentBackToTodoLis = (todo) => {
+    let deletedFromDoneList = doneItems.filter((item) => item === todo);
+    deletedFromDoneList = deletedFromDoneList[0];
     const currentDoneArray = doneItems.filter((item) => item !== todo);
-    const deletedFromDoneList = doneItems.filter((item) => item === todo);
 
-    console.log(currentDoneArray);
-    console.log(deletedFromDoneList);
-
+    setTodos([...todos, deletedFromDoneList]);
     setDoneItems(currentDoneArray);
+  };
 
-    setTodos(...todos, deletedFromDoneList);
+  const deleteFromListForever = (todo) => {
+    const currentDoneArray = doneItems.filter((item) => item !== todo);
+    setDoneItems(currentDoneArray);
   };
 
   return (
@@ -68,9 +72,10 @@ const Todos = () => {
             <div className="todos">
               {todos.map((todo) => (
                 <Todo
-                  key={Math.floor(Math.random() * 100)}
+                  key={todo}
                   todo={todo}
                   action={deleteFromStorage}
+                  symbol="&#128071;"
                 />
               ))}
             </div>
@@ -85,12 +90,18 @@ const Todos = () => {
 
       <div className="done-items">
         {doneItems.map((completedItem) => (
-          <div>
-            <button>Delete</button>
+          <div className="completed-todos">
+            <button
+              className="completed-todos-btn"
+              onClick={() => deleteFromListForever(completedItem)}
+            >
+              &#10060;
+            </button>
             <Todo
-              key={Math.floor(Math.random() * 100)}
+              key={completedItem}
               todo={completedItem}
               action={sentBackToTodoLis}
+              symbol="&#x261D;"
             />
           </div>
         ))}
