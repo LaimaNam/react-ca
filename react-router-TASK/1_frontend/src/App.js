@@ -1,10 +1,14 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+// -- Components
 import Header from './components/Header';
 import Footer from './components/Footer';
+
+// -- Assets
 import logo2 from './assets/logo2.png';
 
-//Pages
+// -- Pages
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import HomePage from './pages/HomePage';

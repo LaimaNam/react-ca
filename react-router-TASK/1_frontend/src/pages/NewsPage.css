@@ -1,0 +1,12 @@
+.news-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1024px;
+  margin: auto;
+  margin: 30px 20px;
+}
+
+.news-heading {
+  text-align: center;
+}

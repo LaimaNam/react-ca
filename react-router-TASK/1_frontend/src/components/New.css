@@ -1,0 +1,15 @@
+.single-news-item {
+  width: 50%;
+  padding: 20px;
+  background-color: rgb(243, 236, 226);
+}
+
+.single-news-item h2 {
+  margin: 0;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.single-news-item p {
+  text-align: justify;
+}

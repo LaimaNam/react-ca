@@ -3,12 +3,12 @@ import './New.css';
 
 const New = ({ title, content }) => {
   return (
-    <div>
-      <article>
+    <>
+      <article className="single-news-item">
         <h2>{title}</h2>
         <p>{content}</p>
       </article>
-    </div>
+    </>
   );
 };
 
