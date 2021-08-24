@@ -1,0 +1,20 @@
+.single-service-item {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: rgb(243, 236, 226);
+  text-align: center;
+}
+
+.single-service-item h3 {
+  background-color: #fff;
+  padding: 15px;
+  margin: 0;
+}
+
+.service-price {
+  border-top: 1px solid rgb(168, 168, 168);
+  margin: 0;
+  padding-top: 10px;
+  font-weight: 500;
+}

@@ -6,8 +6,8 @@
   text-align: center;
   height: 55vh;
   background-color: rgb(243, 236, 226);
-  /* width: fit-content; */
-  padding: 30px;
+  width: fit-content;
+  padding: 30px 70px;
   margin: auto;
 }
 

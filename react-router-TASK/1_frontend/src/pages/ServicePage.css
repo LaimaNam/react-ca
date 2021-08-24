@@ -1,0 +1,11 @@
+.service-page-section h1 {
+  text-align: center;
+}
+
+.services-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
