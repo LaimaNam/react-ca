@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import './ContactPage.css';
 
 const ContactPage = () => {
+  document.title = 'Contact';
   const [formMessage, setFormMessage] = useState('');
 
   //Refs

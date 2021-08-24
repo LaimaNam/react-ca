@@ -2,6 +2,7 @@ import React from 'react';
 import aboutus from '../assets/aboutus.jpg';
 import './AboutPage.css';
 const AboutPage = () => {
+  document.title = 'About';
   return (
     <main>
       <h1 className="about-page-heading">About page</h1>

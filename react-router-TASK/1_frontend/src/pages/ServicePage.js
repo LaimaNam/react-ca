@@ -3,6 +3,7 @@ import Service from '../components/Service';
 import './ServicePage.css';
 
 const ServicePage = () => {
+  document.title = 'Our services';
   return (
     <main>
       <section className="service-page-section">
