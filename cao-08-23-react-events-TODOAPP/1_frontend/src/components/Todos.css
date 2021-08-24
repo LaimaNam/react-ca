@@ -39,6 +39,11 @@ input[type='submit'] {
   cursor: pointer;
 }
 
+input[type='submit']:hover {
+  background-color: rgb(184, 184, 184);
+  color: #fff;
+}
+
 /* completed todo's style */
 .done-items {
   max-width: 950px;
