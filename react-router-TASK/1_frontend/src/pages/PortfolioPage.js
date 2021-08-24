@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './PortfolioPage.css';
 
 const PortfolioPage = () => {
@@ -44,6 +44,7 @@ const PortfolioPage = () => {
         'https://images.unsplash.com/photo-1513325631248-abd221e009a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1496&q=80',
     },
   ];
+  document.title = 'Portfolio';
 
   return (
     <main>
