@@ -1,0 +1,34 @@
+.contact-page-heading {
+  text-align: center;
+}
+
+.contact-page-form {
+  text-align: center;
+  height: 55vh;
+}
+
+.contact-page-form form,
+.contact-page-form form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-page-form form {
+  width: fit-content;
+  margin: auto;
+}
+
+.contact-page-form label {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.contact-page-form input {
+  padding: 7px;
+}
+
+.contact-form-btn {
+  margin-top: 10px;
+  border: none;
+  padding: 15px 10px;
+}

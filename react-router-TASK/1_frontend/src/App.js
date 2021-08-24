@@ -15,26 +15,25 @@ import ServicePage from './pages/ServicePage';
 function App() {
   return (
     <div className="App">
-      <>
-        <Router>
-          <div className="top-navigation-wrapper">
-            <div>
-              <img src={logo2} alt="Logo" />
-            </div>
-            <Header />
+      <Router>
+        <div className="top-navigation-wrapper">
+          <div>
+            <img src={logo2} alt="Logo" />
           </div>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/about" component={AboutPage} />
-            <Route path="/news" component={NewsPage} />
-            <Route path="/service" component={ServicePage} />
-            <Route path="/portfolio" component={PortfolioPage} />
-            <Route path="/contact" component={ContactPage} />
-          </Switch>
+          <Header />
+        </div>
 
-          <Footer />
-        </Router>
-      </>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/news" component={NewsPage} />
+          <Route path="/service" component={ServicePage} />
+          <Route path="/portfolio" component={PortfolioPage} />
+          <Route path="/contact" component={ContactPage} />
+        </Switch>
+
+        <Footer />
+      </Router>
     </div>
   );
 }
