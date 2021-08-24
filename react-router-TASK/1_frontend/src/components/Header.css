@@ -1,5 +1,5 @@
 header {
-  width: 60%;
+  width: 100%;
 }
 header nav ul {
   display: flex;
@@ -20,4 +20,10 @@ header nav ul li a {
 
 header nav ul li a:hover {
   color: rgb(109, 30, 30);
+}
+
+@media screen and (min-width: 600px) {
+  header {
+    width: 60%;
+  }
 }
