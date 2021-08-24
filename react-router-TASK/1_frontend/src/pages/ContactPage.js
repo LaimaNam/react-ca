@@ -12,7 +12,7 @@ const ContactPage = () => {
   //functions
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    if (!userName.current.value || !userEmail.current.value) return;
     setFormMessage(
       'Thank you for your message! We will get back to you in 2 work days.'
     );
