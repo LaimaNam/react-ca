@@ -1,0 +1,14 @@
+.top-navigation-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.top-navigation-wrapper div {
+  width: 18%;
+}
+.top-navigation-wrapper div img {
+  width: 100%;
+}

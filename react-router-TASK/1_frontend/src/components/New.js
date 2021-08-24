@@ -1,4 +1,5 @@
 import React from 'react';
+import './New.css';
 
 const New = ({ title, content }) => {
   return (

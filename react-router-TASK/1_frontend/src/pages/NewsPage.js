@@ -17,7 +17,7 @@ const NewsPage = () => {
       <h1>News page</h1>
       <div className="news-wrapper">
         {news.slice(0, 2).map((item) => (
-          <New title={item.title} content={item.body} />
+          <New key={item.id} title={item.title} content={item.body} />
         ))}
       </div>
     </div>

@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import logo2 from './assets/logo2.png';
 
 //Pages
 import AboutPage from './pages/AboutPage';
@@ -16,8 +17,10 @@ function App() {
     <div className="App">
       <>
         <Router>
-          <div>
-            <div>LOGO</div>
+          <div className="top-navigation-wrapper">
+            <div>
+              <img src={logo2} alt="Logo" />
+            </div>
             <Header />
           </div>
           <Switch>
