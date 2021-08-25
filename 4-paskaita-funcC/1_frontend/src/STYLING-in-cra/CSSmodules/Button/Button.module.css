@@ -1,0 +1,29 @@
+.primary {
+  border: 1px solid hotpink;
+  padding: 10px 15px;
+
+  background-color: #fff;
+  color: #000;
+}
+
+.primary:hover {
+  background-color: hotpink;
+  cursor: pointer;
+  color: #fff;
+  border-bottom: 4px solid red;
+}
+
+.secondary {
+  border: 1px solid black;
+  padding: 10px 15px;
+
+  background-color: #fff;
+  color: #000;
+}
+
+.secondary:hover {
+  background-color: black;
+  color: #fff;
+  border-bottom: 4px solid hotpink;
+  cursor: pointer;
+}

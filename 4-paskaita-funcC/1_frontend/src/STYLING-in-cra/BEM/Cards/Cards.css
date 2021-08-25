@@ -1,0 +1,31 @@
+/* Mobile first */
+/* Mobile */
+.cards-section {
+  width: 100%;
+
+  padding: 35px 0;
+  background-color: #f5f5f5;
+}
+
+.cards-section__title {
+  text-align: center;
+}
+
+.cards-section__cards {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 25px;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .cards-section__cards {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Desktop */

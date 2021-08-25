@@ -1,0 +1,20 @@
+.button {
+  padding: 8px 10px;
+  border: 0;
+
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: green;
+  color: #fff;
+}
+
+.button-secondary {
+  background-color: hotpink;
+  color: #fff;
+}
+
+.button-default {
+  background-color: black;
+}
