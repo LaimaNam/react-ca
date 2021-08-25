@@ -5,15 +5,18 @@ import ProductInfo from './ProductInfo';
 //Styled components
 const Section = styled.section`
   display: flex;
+  max-width: 900px;
+  margin: auto;
 `;
 const ImageWrapper = styled.div`
-  width: 50%;
+  width: 70%;
 `;
 const Image = styled.img`
   width: 100%;
 `;
 const ProductInfoWrapper = styled.div`
   padding: 20px;
+  width: 40%;
 `;
 
 const product = {

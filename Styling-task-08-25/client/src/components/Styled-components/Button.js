@@ -8,6 +8,12 @@ const StyledButton = styled.button`
   border: none;
   text-transform: uppercase;
   letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #07aef5;
+  }
 `;
 
 const Button = ({ primary, secondary, text }) => {
