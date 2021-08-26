@@ -99,7 +99,7 @@ const ProductInfo = ({ title, price, info, size, additionalInfo }) => {
         <Price>€{price.toFixed(2)}</Price>
         <MainProductInfo>
           {info.map((singleInfo) => (
-            <SingleInfo>{singleInfo}</SingleInfo>
+            <SingleInfo key={singleInfo}>{singleInfo}</SingleInfo>
           ))}
         </MainProductInfo>
         <Size>{size}</Size>
@@ -113,7 +113,7 @@ const ProductInfo = ({ title, price, info, size, additionalInfo }) => {
         <ProductCounterBtns>
           <Counter onClick={() => decrement()}>-</Counter>
           <CounterInput
-            onChange={(e) => setCount(e.currentTarget.value)}
+            onChange={(e) => setCount(+e.target.value)}
             value={count}
           />
           <Counter onClick={() => increment()}>+</Counter>

@@ -35,6 +35,7 @@ const product = {
     'Please keep in mind there may be a slight variation from screen to printed poster art.',
   ],
 };
+
 const Product = () => {
   return (
     <Section>
