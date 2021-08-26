@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-  background-color: ${(props) => (props.primary ? 'skyblue' : 'grey')};
+  background-color: ${(props) => (props.primary ? '#07aef5' : 'grey')};
   color: white;
   padding: 7px 40px;
   border: none;
@@ -12,7 +12,7 @@ const StyledButton = styled.button`
   border-radius: 5px;
 
   &:hover {
-    background-color: #07aef5;
+    background-color: skyblue;
   }
 `;
 
