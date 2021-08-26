@@ -12,7 +12,7 @@ const StyledButton = styled.button`
   border-radius: 3px;
 
   &:hover {
-    background-color: skyblue;
+    background-color: black;
   }
 `;
 
