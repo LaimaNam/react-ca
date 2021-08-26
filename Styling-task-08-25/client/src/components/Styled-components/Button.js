@@ -9,7 +9,7 @@ const StyledButton = styled.button`
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 3px;
 
   &:hover {
     background-color: skyblue;
