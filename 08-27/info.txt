@@ -1,0 +1,16 @@
+state management react:
+
+state types:
+ -- Global state (can be accessed in any (not always in every) component/page)
+ -- Local state (can be accessed in component that describes it)
+
+ state management tools:
+functional components:
+ -- useState (in functional components)  -> globaliam state'e nenaudoti
+ -- useReducer (in functional components) -> global/local
+ -- Redux (third party library) -> global
+class components:
+ -- state/setState (in class components)-> globaliam state'e nenaudoti 
+
+----------------------------------------
+ useContext()
