@@ -42,11 +42,7 @@ function App() {
         <h1>Posts, comments or todos:</h1>
         {console.log(state.whatToRender)}
         <div>{state.whatToRender === 'posts' && <h1>posts rendered</h1>}</div>
-        <div>{
-          if(state.whatToRender === "posts")(
-            <h1>posts rendered</h1>
-          ) else if ()
-          }</div>
+        <div></div>
         <div> ----- ------ ------ </div>
         <CompA />
         <CompB />
