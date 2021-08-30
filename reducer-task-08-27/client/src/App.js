@@ -23,32 +23,17 @@ const dataReducer = (state, action) => {
 
   switch (action.type) {
     case 'POSTS_CLICKED':
-      return {
-        whatToLoad: 'posts',
-      };
+      return { ...state, whatToLoad: 'posts' };
     case 'COMMENTS_CLICKED':
-      return {
-        whatToLoad: 'comments',
-      };
+      return { ...state, whatToLoad: 'comments' };
     case 'TODOS_CLICKED':
-      return {
-        whatToLoad: 'todos',
-      };
+      return { ...state, whatToLoad: 'todos' };
     case 'POSTS_LOADED':
-      return {
-        dataArray: action.data,
-        whatToRender: 'posts',
-      };
+      return { ...state, dataArray: action.data, whatToRender: 'posts' };
     case 'COMMENTS_LOADED':
-      return {
-        dataArray: action.data,
-        whatToRender: 'comments',
-      };
+      return { ...state, dataArray: action.data, whatToRender: 'comments' };
     case 'TODOS_LOADED':
-      return {
-        dataArray: action.data,
-        whatToRender: 'todos',
-      };
+      return { ...state, dataArray: action.data, whatToRender: 'todos' };
     default:
       return state;
   }
@@ -105,38 +90,38 @@ function App() {
         {/* comments rendering */}
         {console.log('component render state data array: ', state)}
         <div>
-          {state.dataArray && state.whatToRender === 'comments' ? (
-            <ul>
+          {state.dataArray && state.whatToRender === 'comments' && (
+            <>
               {state.dataArray.splice(0, 3).map((comment) => (
-                <>
+                <ul>
                   <li>Name: {comment.name}</li>
                   <li>Email: {comment.email}</li>
                   <li>Comment: {comment.body}</li>
-                </>
+                </ul>
               ))}
-            </ul>
-          ) : null}
+            </>
+          )}
           {/* posts rendering*/}
-          {state.dataArray && state.whatToRender === 'posts' ? (
-            <ul>
+          {state.dataArray && state.whatToRender === 'posts' && (
+            <>
               {state.dataArray.splice(0, 3).map((post) => (
-                <>
+                <ul>
                   <li>Post title: {post.title}</li>
                   <li>Post: {post.body}</li>
-                </>
+                </ul>
               ))}
-            </ul>
-          ) : null}
-          {/* rodos rendering */}
+            </>
+          )}
+          {/* todos rendering */}
           {state.dataArray && state.whatToRender === 'todos' ? (
-            <ul>
+            <>
               {state.dataArray.splice(0, 3).map((todo) => (
-                <>
+                <ul>
                   <li>Todo title:{todo.title}</li>
                   <li>{todo.completed ? 'completed' : 'not completed'}</li>
-                </>
+                </ul>
               ))}
-            </ul>
+            </>
           ) : null}
         </div>
         <div></div>
