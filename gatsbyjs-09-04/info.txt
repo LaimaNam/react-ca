@@ -1,0 +1,14 @@
+Environment for REACT.js applications:
+
+- Create react app (CRA) - single page applications
+- Gatsby.js | Multi page application | Static site generator
+- Next.js | Multi page application | Server side rendering(ssr)
+
+Main differences:
+                SPEED     DYNAMISM     SECURITY      SEO          
+- CRA:            +          +            +           -
+- Gatsby.js:      +         +/-           +           +
+- Next.js:       +/-         +            +           +  
+              (serverio
+               vaidmuo
+               svarbus)      

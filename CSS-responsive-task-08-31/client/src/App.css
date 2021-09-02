@@ -1,0 +1,24 @@
+/* MOBILE FIRST */
+.App {
+  text-align: center;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .group {
+    flex-direction: row;
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1000px) {
+  .group {
+    flex-direction: column-reverse;
+  }
+}
