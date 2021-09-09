@@ -2,6 +2,8 @@ import React, { useState, useContext, useRef } from 'react';
 import { useHistory } from 'react-router';
 import axios from 'axios';
 import { UserContext } from './../App';
+import '../styles/2_utilities.css';
+import '../styles/4_login.css';
 
 const LoginScreen = () => {
   //Hooks

@@ -1,14 +1,27 @@
+import '../styles/2_utilities.css';
+import '../styles/4_my-account.css';
 import axios from 'axios';
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import { useHistory } from 'react-router';
 import { UserContext } from './../App';
 
-const MyAccountScreen = () => {
-  // -- API URL
-  const GET_USER_URI = 'http://localhost:5000/api/users/';
-  const ADD_CAR_URI = 'http://localhost:5000/api/cars/add/';
-  const DELETE_CAR_URI = 'http://localhost:5000/api/cars/delete/';
+// -- API URL
+const GET_USER_URI = 'http://localhost:5000/api/users/';
+const ADD_CAR_URI = 'http://localhost:5000/api/cars/add/';
+const DELETE_CAR_URI = 'http://localhost:5000/api/cars/delete/';
 
+const getData = (userId, setUserToShow) => {
+  return axios
+    .get(GET_USER_URI + userId)
+    .then((user) => {
+      setUserToShow(user.data);
+      // console.log('fetched data', user.data);
+    })
+    .catch((err) => console.log(err));
+};
+
+//component
+const MyAccountScreen = () => {
   // -- HOOKS
   // -- -- global state
   const { dispatch } = useContext(UserContext);
@@ -23,36 +36,40 @@ const MyAccountScreen = () => {
     price: '',
   });
 
+  const [formErrorMsg, setFormErrorMsg] = useState('');
+
+  // refs
+  const AddCarFormRef = useRef();
+
   // -- redirects
   const history = useHistory();
 
   // -- side effects
   useEffect(() => {
     let userIdFromLocalStorage = localStorage.getItem('user');
-    console.log(
-      'useEffect: getting id from local storage',
-      userIdFromLocalStorage
-    );
     setUserId(userIdFromLocalStorage);
-    return axios
-      .get(GET_USER_URI + userIdFromLocalStorage)
-      .then((user) => {
-        setUserToShow(user.data);
-        console.log('fetched data', user.data);
-      })
-      .catch((err) => console.log(err));
+    getData(userIdFromLocalStorage, setUserToShow);
   }, []);
 
   // -- CUSTOM FUNCTIONS
-
   // -- -- creating new car advert
   const addNewCar = (e) => {
     e.preventDefault();
-    console.log(newCar);
     axios
       .put(ADD_CAR_URI + userId, newCar)
       .then(() => {
-        window.location.reload(false);
+        if (!newCar.make || !newCar.model || !newCar.year || !newCar.price) {
+          setFormErrorMsg('Please fill in all the fields!');
+        } else {
+          setFormErrorMsg('');
+          getData(userId, setUserToShow);
+          setNewCar({
+            make: '',
+            model: '',
+            year: '',
+            price: '',
+          });
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -67,7 +84,7 @@ const MyAccountScreen = () => {
   // -- -- deleting a car
   const deleteCar = (carId) => {
     axios.delete(DELETE_CAR_URI + carId).then(() => {
-      window.location.reload(false);
+      getData(userId, setUserToShow);
     });
   };
 
@@ -87,39 +104,42 @@ const MyAccountScreen = () => {
         <button onClick={() => logoutUser()}>Logout</button>
       </div>
       <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Make</th>
-              <th>Model</th>
-              <th>Year</th>
-              <th>Price</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {userToShow.cars ? (
-              userToShow.cars.map((car) => (
+        {userToShow.cars && userToShow.cars.length !== 0 ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {userToShow.cars.map((car) => (
                 <tr key={car._id}>
                   <td>{car.make}</td>
                   <td>{car.model}</td>
                   <td>{car.year}</td>
                   <td>${car.price}</td>
                   <td>
-                    <button onClick={() => deleteCar(car._id)}>Delete</button>
+                    <button
+                      className="btn-primary btn-delete-car"
+                      onClick={() => deleteCar(car._id)}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
-              ))
-            ) : (
-              <tr>
-                <td>No cars to show</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>You have no cars to show. Please add a car you want to sell: </p>
+        )}
       </div>
       <div>
-        <form>
+        <form ref={AddCarFormRef}>
           <input
             type="text"
             value={newCar.make}
@@ -146,6 +166,7 @@ const MyAccountScreen = () => {
           />
           <button onClick={addNewCar}>Add new car</button>
         </form>
+        <p>{formErrorMsg}</p>
       </div>
     </main>
   );

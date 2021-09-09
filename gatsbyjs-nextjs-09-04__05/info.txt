@@ -12,3 +12,11 @@ Main differences:
               (serverio
                vaidmuo
                svarbus)      
+
+
+// Client side rendering:
+ -- frontend
+ -- backend
+
+ // Server side rendering
+ -- Backend -> jo viduje - Frontend

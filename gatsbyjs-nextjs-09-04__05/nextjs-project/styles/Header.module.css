@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}

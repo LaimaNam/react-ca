@@ -1,0 +1,40 @@
+React.js application environments
+- create react app | Single page application - Client side rendering
+- next.js          | Multi page application - Server side rendering/Static side generating
+- gatsby.js        | Multi page application - Static site generation (+ Client side rendering)
+
+React.js routing
+
+- Create React App - using third party lib "React Router" -> https://reactrouter.com/
+- Next.js - using inner routing system -> files inside "pages" folder are app pages
+- Gatsby.js - using inner routing system -> files inside "pages" folder are app pages
+
+React.js state management tools
+
+- useState hook           | local state management
+- useReducer hook         | local/global management
+- Redux (third party lib) | global management
+
+---For global state we need Context API
+ -- -- sending global state:  need Context.Provider
+ -- -- Receiving global state: need Context.Consumer( class components) or useContext hook(functional comp)
+
+ React.js components lifecycle
+ 
+- Mounting(when component is created)
+ -- Class components calls: constructor -> render -> componentDidMount
+ -- Functional comp.call: return -> useEffect (if useEffect should run only on Mounting, it needs to have empty dependecies array useEffect(()=>{}, [])   )
+
+ -- Updating (when component get new props or state changed)
+ -- -- Class comp call: render -> componentDidUpdate
+-- -- Func comp call: return -> useEffect (useEffect bus kvieciamas tik jeigu nebus depencencies array arba tas dep array tures kazkoki nurodyta state, kuri jis trackina)
+
+-- Unmounting (when component is removed from UI)
+ -- -- Class comp calls: componentWillUnmount
+ -- -- Func comp call: useEffect (will be called useEffect return fnction 
+ useEffect()=>{
+     return  ()=>{
+         clean up function
+     }
+ }
+ )

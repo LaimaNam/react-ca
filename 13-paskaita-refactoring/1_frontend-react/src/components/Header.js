@@ -1,7 +1,40 @@
 import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../App';
+import styled from 'styled-components';
 
+//styles
+const HeaderStyled = styled.div`
+  width: 100%;
+  background-color: blue;
+  color: #fff;
+
+  header {
+    display: flex;
+    align-items: center;
+    max-width: 1024px;
+    margin: auto;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  ul {
+    display: flex;
+    gap: 10px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+`;
+
+//component
 const Header = () => {
   //Hooks
   // -- state
@@ -23,25 +56,27 @@ const Header = () => {
   }, [dispatch]);
 
   return (
-    <header>
-      <div className="container">CAR ADVERTS</div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          {state.user ? (
+    <HeaderStyled>
+      <header className="header">
+        <div>CAR ADVERTS</div>
+        <nav>
+          <ul>
             <li>
-              <Link to="/myaccount">My Account</Link>
+              <Link to="/">Home</Link>
             </li>
-          ) : (
-            <li>
-              <Link to="/login">Login/Signup</Link>
-            </li>
-          )}
-        </ul>
-      </nav>
-    </header>
+            {state.user ? (
+              <li>
+                <Link to="/myaccount">My Account</Link>
+              </li>
+            ) : (
+              <li>
+                <Link to="/login">Login/Signup</Link>
+              </li>
+            )}
+          </ul>
+        </nav>
+      </header>
+    </HeaderStyled>
   );
 };
 
