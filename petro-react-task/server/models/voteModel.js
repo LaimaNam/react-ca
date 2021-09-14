@@ -7,12 +7,10 @@ const voteSchema = mongoose.Schema({
   },
   votes: {
     type: Number,
-    require: true,
     default: 0,
   },
   voted_teams: {
     type: Array,
-    require: true,
     default: [],
   },
 });
